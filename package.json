@@ -1,0 +1,32 @@
+{
+  "name": "monopoly-web",
+  "version": "1.0.0",
+  "description": "Monopoly board game web version with Capacitor for Android",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=8080",
+    "build": "echo 'Build completed'",
+    "cap:add": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open android",
+    "cap:build": "npx cap build android",
+    "cap:run": "npx cap run android"
+  },
+  "keywords": [
+    "monopoly",
+    "game",
+    "capacitor",
+    "android"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/cli": "^5.0.0",
+    "live-server": "^1.2.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@capacitor/core": "^5.0.0"
+  }
+}

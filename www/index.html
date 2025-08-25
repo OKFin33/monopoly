@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垄断游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 主菜单 -->
+        <div id="mainMenu" class="screen active">
+            <h1>垄断游戏</h1>
+            <div class="menu-buttons">
+                <button id="singlePlayerBtn" class="menu-btn">单人游戏</button>
+                <button id="multiPlayerBtn" class="menu-btn">多人游戏</button>
+                <button id="helpBtn" class="menu-btn">帮助</button>
+            </div>
+        </div>
+
+        <!-- 连接设置 -->
+        <div id="connectionScreen" class="screen">
+            <h2>连接设置</h2>
+            <div class="connection-form">
+                <input type="text" id="serverIP" placeholder="服务器IP地址" value="127.0.0.1">
+                <input type="number" id="serverPort" placeholder="端口" value="8888">
+                <button id="connectBtn" class="menu-btn">连接</button>
+                <button id="backToMenuBtn" class="menu-btn secondary">返回主菜单</button>
+            </div>
+        </div>
+
+        <!-- 颜色选择 -->
+        <div id="colorScreen" class="screen">
+            <h2>选择棋子颜色</h2>
+            <div class="color-options">
+                <div class="color-option" data-color="red">
+                    <div class="pawn red-pawn"></div>
+                    <span>红色</span>
+                </div>
+                <div class="color-option" data-color="blue">
+                    <div class="pawn blue-pawn"></div>
+                    <span>蓝色</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏界面 -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="player-info">
+                    <span id="currentPlayer">当前玩家: 红色</span>
+                    <span id="diceResult">骰子: -</span>
+                </div>
+                <button id="rollDiceBtn" class="game-btn">掷骰子</button>
+            </div>
+            
+            <div class="game-board">
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+            </div>
+            
+            <div class="game-controls">
+                <button id="endTurnBtn" class="game-btn">结束回合</button>
+                <button id="quitGameBtn" class="game-btn secondary">退出游戏</button>
+            </div>
+        </div>
+
+        <!-- 帮助界面 -->
+        <div id="helpScreen" class="screen">
+            <h2>游戏帮助</h2>
+            <div class="help-content">
+                <h3>游戏规则:</h3>
+                <ul>
+                    <li>两名玩家轮流掷骰子移动棋子</li>
+                    <li>棋子按顺时针方向在棋盘上移动</li>
+                    <li>先到达终点的玩家获胜</li>
+                </ul>
+                <h3>操作说明:</h3>
+                <ul>
+                    <li>点击"掷骰子"按钮进行移动</li>
+                    <li>点击"结束回合"结束当前回合</li>
+                    <li>多人模式需要连接到服务器</li>
+                </ul>
+            </div>
+            <button id="backFromHelpBtn" class="menu-btn">返回主菜单</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html> 
